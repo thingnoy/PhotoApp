@@ -22,6 +22,7 @@ class PhotoListViewController: UIViewController {
         KingfisherManager.shared.cache.clearCache()
     }
 
+    private let refreshControl = UIRefreshControl()
     private var displayedPhotos: [PhotoListModel.FetchPhotos.ViewModel.DisplayedPhoto] = []
 
     // MARK: - View lifecycle
@@ -39,11 +40,19 @@ class PhotoListViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
+
+        // Setup pull to refresh
+        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshControl
     }
 
     private func fetchPhotos() {
         let request = PhotoListModel.FetchPhotos.Request()
         interactor?.fetchPhotos(request: request)
+    }
+
+    @objc private func handleRefresh() {
+        fetchPhotos()
     }
 }
 
@@ -53,6 +62,9 @@ extension PhotoListViewController: PhotoListViewControllerProtocol {
     func displayPhotos(viewModel: PhotoListModel.FetchPhotos.ViewModel) {
         displayedPhotos = viewModel.displayedPhotos
         tableView.reloadData()
+
+        // หยุด animation refresh control
+        refreshControl.endRefreshing()
     }
 }
 
@@ -62,7 +74,7 @@ extension PhotoListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTableViewCell", for: indexPath) as! PhotoTableViewCell
+        let cell: PhotoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let photo = displayedPhotos[indexPath.row]
         cell.configure(with: photo)
         return cell

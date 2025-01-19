@@ -9,6 +9,8 @@ import Kingfisher
 import UIKit
 
 class PhotoTableViewCell: UITableViewCell {
+    static let identifier = String(describing: PhotoTableViewCell.self)
+
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var authorLabel: UILabel!
 
@@ -47,31 +49,31 @@ class PhotoTableViewCell: UITableViewCell {
 //           }.resume()
 //       }
 
-         // แสดง loading indicator ระหว่างโหลดรูป
-         photoImageView.kf.indicatorType = .activity
+        // แสดง loading indicator ระหว่างโหลดรูป
+        photoImageView.kf.indicatorType = .activity
 
-         // ใส่ animation fade เวลารูปโหลดเสร็จ
-         let options: KingfisherOptionsInfo = [
-             .transition(.fade(0.2)),
-             .cacheOriginalImage,
-         ]
+        // ใส่ animation fade เวลารูปโหลดเสร็จ
+        let options: KingfisherOptionsInfo = [
+            .transition(.fade(0.2)),
+            .cacheOriginalImage,
+        ]
 
-         // ปรับขนาดรูปก่อนแสดง ช่วยประหยัด memory
-         let processor = DownsamplingImageProcessor(size: photoImageView.bounds.size)
+        // ปรับขนาดรูปก่อนแสดง ช่วยประหยัด memory
+        let processor = DownsamplingImageProcessor(size: photoImageView.bounds.size)
 
-         // เพิ่ม placeholder รูปและจัดการ error
-         photoImageView.kf.setImage(
-             with: URL(string: photo.thumbnailUrl),
-             placeholder: UIImage(named: "placeholder"),
-             options: options
-         ) { result in
-             switch result {
-             case let .success(value):
-                 print("รูปโหลดสำเร็จ: \(value.source.url?.absoluteString ?? "")")
-             case let .failure(error):
-                 print("โหลดรูปไม่สำเร็จ: \(error.localizedDescription)")
-             }
-         }
+        // เพิ่ม placeholder รูปและจัดการ error
+        photoImageView.kf.setImage(
+            with: URL(string: photo.thumbnailUrl),
+            placeholder: UIImage(named: "placeholder"),
+            options: options
+        ) { result in
+            switch result {
+            case let .success(value):
+                print("รูปโหลดสำเร็จ: \(value.source.url?.absoluteString ?? "")")
+            case let .failure(error):
+                print("โหลดรูปไม่สำเร็จ: \(error.localizedDescription)")
+            }
+        }
 
         // simple use
         // photoImageView.kf.setImage(with: URL(string: photo.thumbnailUrl))
