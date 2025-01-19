@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.10.2)
+  - Kingfisher (7.12.0)
+  - Wormholy (1.7.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0)
+  - Kingfisher (~> 7.0)
+  - Wormholy
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - Wormholy
+
+SPEC CHECKSUMS:
+  Alamofire: 7193b3b92c74a07f85569e1a6c4f4237291e7496
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
+  Wormholy: ab1c8c2f02f58587a0941deb0088555ffbf039a1
+
+PODFILE CHECKSUM: 9b310b5e1be412122f1e8292bd2e3f0145f6572d
+
+COCOAPODS: 1.16.2

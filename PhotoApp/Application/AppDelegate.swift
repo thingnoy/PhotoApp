@@ -6,6 +6,10 @@
 //
 
 import UIKit
+#if DEBUG
+import Wormholy
+#endif
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

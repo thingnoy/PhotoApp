@@ -1,3 +1,4 @@
+import Alamofire
 import Foundation
 
 protocol PhotoListWorkerProtocol {
@@ -32,4 +33,18 @@ class PhotoListWorker: PhotoListWorkerProtocol {
         }
         task.resume()
     }
+
+//     func fetchPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
+//         let url = "https://picsum.photos/v2/list?page=1&limit=100"
+//
+//         AF.request(url)
+//             .responseDecodable(of: [Photo].self) { response in
+//                 switch response.result {
+//                 case let .success(photos):
+//                     completion(.success(photos))
+//                 case let .failure(error):
+//                     completion(.failure(error))
+//                 }
+//             }
+//     }
 }
