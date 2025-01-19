@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo List View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PhotoListViewController" id="Y6W-OH-hqX" customClass="PhotoListViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OJ5-Lm-Shp">
+                                <rect key="frame" x="0.0" y="96" width="414" height="766"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="caD-FE-4q8">
+                                <rect key="frame" x="0.0" y="48" width="414" height="48"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OlE-hP-Uyi">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaZ-Ta-Bv2">
+                                                <rect key="frame" x="20" y="20" width="360.5" height="48"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="clear"/>
+                                                <connections>
+                                                    <action selector="onTabClear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7iv-5D-KGB"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HG-3r-9fV">
+                                                <rect key="frame" x="380.5" y="20" width="53.5" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="TaZ-Ta-Bv2" secondAttribute="trailing" constant="8" id="2S1-3W-4PZ"/>
+                                            <constraint firstItem="7HG-3r-9fV" firstAttribute="centerX" secondItem="OlE-hP-Uyi" secondAttribute="centerX" id="ajr-Ag-YtU"/>
+                                            <constraint firstItem="7HG-3r-9fV" firstAttribute="centerY" secondItem="OlE-hP-Uyi" secondAttribute="centerY" id="bFc-YV-BV0"/>
+                                            <constraint firstAttribute="bottom" secondItem="TaZ-Ta-Bv2" secondAttribute="bottom" constant="4" id="hYo-dv-E8n"/>
+                                            <constraint firstItem="TaZ-Ta-Bv2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OlE-hP-Uyi" secondAttribute="leading" constant="16" id="mGC-Bh-FQS"/>
+                                            <constraint firstItem="TaZ-Ta-Bv2" firstAttribute="top" secondItem="OlE-hP-Uyi" secondAttribute="top" constant="4" id="oa1-lF-iK1"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="EaD-nI-f7Z"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="caD-FE-4q8" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SVF-f4-DCh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OJ5-Lm-Shp" secondAttribute="bottom" id="VFG-Hv-vq7"/>
+                            <constraint firstItem="caD-FE-4q8" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dF7-QH-kUi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OJ5-Lm-Shp" secondAttribute="trailing" id="dRl-hC-i5f"/>
+                            <constraint firstItem="OJ5-Lm-Shp" firstAttribute="top" secondItem="caD-FE-4q8" secondAttribute="bottom" id="g4F-XB-inD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="caD-FE-4q8" secondAttribute="trailing" id="pWV-Og-b05"/>
+                            <constraint firstItem="OJ5-Lm-Shp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zlw-b4-eLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="OJ5-Lm-Shp" id="qLD-9F-CcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
