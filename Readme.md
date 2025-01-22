@@ -20,7 +20,7 @@ A simple iOS app that displays a collection of photos from Picsum Photos API usi
 1. Clone the repository
 
 ```bash
-git clone https://github.com/thingnoy/PhotoApp.**git**
+git clone https://github.com/thingnoy/PhotoApp.git
 cd PhotosApp
 ```
 
@@ -64,6 +64,9 @@ PhotosApp/
 The app uses the [Picsum Photos API](https://picsum.photos) to fetch random photos.
 
 - Endpoint: `https://picsum.photos/v2/list`
+
+## Screenshots
+![Screenshot](screenshot.png)
 
 ## License
 
