@@ -32,6 +32,6 @@ class PhotoTableViewCell: UITableViewCell {
     func configure(with photo: PhotoListModel.FetchPhotos.ViewModel.DisplayedPhoto) {
         authorLabel.text = photo.author
 
-        photoImageView.loadImage(from: photo.thumbnailUrl, placeholder: UIImage(named: "loading"))
+        photoImageView.loadImage(from: photo.thumbnailUrl, placeholder: UIImage(named: "Loading"))
     }
 }

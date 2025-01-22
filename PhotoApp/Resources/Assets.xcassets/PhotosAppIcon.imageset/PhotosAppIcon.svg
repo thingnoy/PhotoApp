@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#1E293B"/>
+  
+  <!-- Vertical Photo Stack - Centered and Compact -->
+  <g transform="translate(312, 262)">
+    <!-- Photo 1 -->
+    <rect width="400" height="150" fill="#E5E7EB"/>
+    <path d="M0 150 L400 105 V150 H0" fill="#9CA3AF"/>
+    
+    <!-- Photo 2 -->
+    <g transform="translate(0, 180)">
+      <rect width="400" height="150" fill="#E5E7EB"/>
+      <path d="M0 150 L400 105 V150 H0" fill="#9CA3AF"/>
+    </g>
+    
+    <!-- Photo 3 -->
+    <g transform="translate(0, 360)">
+      <rect width="400" height="150" fill="#E5E7EB"/>
+      <path d="M0 150 L400 105 V150 H0" fill="#9CA3AF"/>
+    </g>
+  </g>
+</svg>
